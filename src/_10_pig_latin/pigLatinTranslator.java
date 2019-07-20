@@ -42,6 +42,7 @@ f.pack();
 		PigLatin p = new PigLatin();
 		String words = t.getText();
 		p.translate(words);
+		tf.setText(words);
 	}
 	
 }
