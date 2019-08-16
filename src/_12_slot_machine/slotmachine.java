@@ -63,7 +63,7 @@ public class slotmachine implements ActionListener {
 				int rand = r.nextInt(3);
 				
 				if (rand == 1) {
-					
+					System.out.println("one");
 						try {
 							one = createLabelImage("cherry.jpeg");
 						} catch (MalformedURLException e1) {
@@ -71,17 +71,16 @@ public class slotmachine implements ActionListener {
 							e1.printStackTrace();
 						}
 					
-				}
-				
-				if (rand == 2) {
+				}else if (rand == 2) {
+					System.out.println("two");
 					try {
 						two = createLabelImage("lime.jpeg");
 					} catch (MalformedURLException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-				}
-				if (rand == 3) {
+				}else {
+					System.out.println("three");
 					try {
 						three = createLabelImage("orange.jpeg");
 					} catch (MalformedURLException e1) {
