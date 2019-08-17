@@ -23,6 +23,7 @@ public class slotmachine implements ActionListener {
 	JLabel one = new JLabel();
 	JLabel two = new JLabel();
 	JLabel three = new JLabel();
+
 	private JLabel createLabelImage(String fileName) throws MalformedURLException {
 		URL imageURL = getClass().getResource(fileName);
 		if (imageURL == null) {
@@ -35,15 +36,36 @@ public class slotmachine implements ActionListener {
 	}
 
 	void makeUI() {
-		spin.addActionListener(this);
 		f.setPreferredSize(new Dimension(1000, 1000));
-		f.add(p);
 		f.setVisible(true);
 		p.add(spin);
+		spin.addActionListener(this);
+		one.setPreferredSize(new Dimension(250, 250));
+		two.setPreferredSize(new Dimension(250, 250));
+		three.setPreferredSize(new Dimension(250, 250));
+		try {
+			one = createLabelImage("cherry.jpeg");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			two = createLabelImage("lime.jpeg");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			three = createLabelImage("orange.jpeg");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		p.add(one);
 		p.add(two);
 		p.add(three);
 		spin.setText("spin");
+		f.add(p);
 		f.pack();
 
 	}
@@ -51,46 +73,137 @@ public class slotmachine implements ActionListener {
 	public static void main(String[] args) {
 		slotmachine slot = new slotmachine();
 		slot.makeUI();
+
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == spin) {
+		JLabel a = new JLabel();
+		JLabel b = new JLabel();
+		JLabel c = new JLabel();
 			System.out.println("spin");
-
-			for (int i = 0; i < 3; i++) {
-				int rand = r.nextInt(3);
-				
-				if (rand == 1) {
-					System.out.println("one");
-						try {
-							one = createLabelImage("cherry.jpeg");
-						} catch (MalformedURLException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-					
-				}else if (rand == 2) {
-					System.out.println("two");
-					try {
-						two = createLabelImage("lime.jpeg");
-					} catch (MalformedURLException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				}else {
-					System.out.println("three");
-					try {
-						three = createLabelImage("orange.jpeg");
-					} catch (MalformedURLException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				
+			p.remove(one);
+			p.remove(two);
+			p.remove(three);
+			int rand = r.nextInt(3);
+			System.out.println(rand);
+			if (rand == 0) {
+				try {
+					 a = new JLabel();
+					a = createLabelImage("cherry.jpeg");
+					p.add(a);
+					f.pack();
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
 			}
-		
+
+			 if (rand == 1) {
+				System.out.println("two");
+				try {
+					 b = new JLabel();
+					b = createLabelImage("lime.jpeg");
+					p.add(b);
+					f.pack();
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+
+				}
+			}  if(rand == 2){
+				System.out.println("three");
+				try {
+					 c = new JLabel();
+					c = createLabelImage("orange.jpeg");
+					p.add(c);
+					f.pack();
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
+			}
+			
+			if (rand == 0) {
+				try {
+					 a = new JLabel();
+					a = createLabelImage("lime.jpeg");
+					p.add(a);
+					f.pack();
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+
+			 if (rand == 1) {
+				System.out.println("two");
+				try {
+					 b = new JLabel();
+					b = createLabelImage("orange.jpeg");
+					p.add(b);
+					f.pack();
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+
+				}
+			}  if(rand == 2){
+				System.out.println("three");
+				try {
+					 c = new JLabel();
+					c = createLabelImage("cherry.jpeg");
+					p.add(c);
+					f.pack();
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
+			}
+			if (rand == 0) {
+				try {
+					 a = new JLabel();
+					a = createLabelImage("orange.jpeg");
+					p.add(a);
+					f.pack();
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+
+			 if (rand == 1) {
+				System.out.println("two");
+				try {
+					 b = new JLabel();
+					b = createLabelImage("cherry.jpeg");
+					p.add(b);
+					f.pack();
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+
+				}
+			}  if(rand == 2){
+				System.out.println("three");
+				try {
+					 c = new JLabel();
+					c = createLabelImage("lime.jpeg");
+					p.add(c);
+					f.pack();
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
+			}
+			p.add(a);
+			p.add(b);
+			p.add(c);
+
 		}
 	}
-}
+
